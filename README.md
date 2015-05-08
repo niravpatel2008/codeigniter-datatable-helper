@@ -9,6 +9,13 @@ like:
 ```sh
 $autoload['helper'] = array('url','file','email','common_helper', 'datatable_helper');
 ```
+
+#How to use 
+```sh
+SSP::simple ( $post_request, $table_name, $primary_key, $columns , [$join, $custom_where])
+```
+$join and $custom_where are optional.
+
 #Sample controler function:
 ```sh
 public function deal_list()
