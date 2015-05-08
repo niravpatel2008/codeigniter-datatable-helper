@@ -5,14 +5,15 @@ Put this file inside helper folder of CI and thats it.
 
 Add datatable_helper in /config/autoload.php
 like: 
+
+```sh
 $autoload['helper'] = array('url','file','email','common_helper', 'datatable_helper');
-
-Sample controler function:
-
+```
+#Sample controler function:
+```sh
 public function deal_list()
 {
 		$post = $this->input->post();
-
 		$columns = array(
 			array( 'db' => 'db_uniqueid',  'dt' => 0 ),
 			array( 'db' => 'do_offertitle',  'dt' => 1 ),
@@ -56,16 +57,16 @@ public function deal_list()
 		echo json_encode( SSP::simple( $post, DEAL_BUYOUT, "db_autoid", $columns ,array($join1, $join2, $join3,$join4),$custom_where) );exit;
 
 }
-
+```
 
 You also can assign alias of coloumn name if join table hase same coloumn name 
-
+```sh
       $columns = array(
 			  array( 'alias' => 'cat_name','db' => 'c.name', 'dt' => 0 ),
 			  array( 'db' => 'p.brand',  'dt' => 1 ),
 			  array( 'db' => 'p.name',  'dt' => 2 ),
 		    ...
 		  );
-
+```
 
 
